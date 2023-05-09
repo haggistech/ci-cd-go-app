@@ -12,10 +12,12 @@ func TestHelloWorld(t *testing.T) {
 
    s.ServeHTTP(w, req)
 
-   if w.Result().StatusCode != 200 {
-      t.Fatalf("unexpected status code %d", w.Result().StatusCode)
-}
-body := w.Body.String()
-if body != `{"message": "hello world"}` {
-    t.Fatalf("unexpected body received: %s", body)
-}<span></span>
+   if w.Result().StatusCode != 200 { t.Fatalf("unexpected status code %d", w.Result().StatusCode)}
+ 
+
+want:= `{"message": "hello world"}`
+got := w.Body.String()
+
+if want != got {
+   t.Errorf("got %q want %q", got, want)
+}} 

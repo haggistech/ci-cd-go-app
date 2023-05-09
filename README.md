@@ -1,1 +1,3 @@
-# ci-cd-go-app
+# ci-cd-go
+
+Playing with go and tests
